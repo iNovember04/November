@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to NOVEMBER, your go-to site for events, photos, and videos.">
+    <meta name="keywords" content="NOVEMBER, events, photos, videos">
+    <meta name="author" content="Your Name">
+    <title>NOVEMBER</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
+    <link rel="icon" href="favicon.ico"> <!-- Link to your favicon -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet"> <!-- Futuristic Font -->
+</head>
+<body>
+    <header>
+        <h1>NOVEMBER</h1>
+        <nav>
+            <ul>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#photos">Photos</a></li>
+                <li><a href="#videos">Videos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="events">
+            <h2>Upcoming Events</h2>
+            <p>Check out our latest events happening this month.</p>
+        </section>
+        <section id="photos">
+            <h2>Photo Gallery</h2>
+            <p>Explore our photo gallery and feel free to upload your own pictures.</p>
+            <form id="photoUploadForm">
+                <label for="photoUpload">Upload Photo:</label>
+                <input type="file" id="photoUpload" name="photoUpload">
+                <button type="submit">Upload</button>
+            </form>
+            <div id="photoGallery"></div>
+        </section>
+        <section id="videos">
+            <h2>Video Collection</h2>
+            <p>Watch and share our video collection.</p>
+        </section>
+        <section id="comments">
+            <h2>Comments</h2>
+            <form id="commentForm">
+                <label for="commentText">Add a comment:</label>
+                <textarea id="commentText" name="commentText" rows="4" cols="50"></textarea>
+                <button type="submit">Post Comment</button>
+            </form>
+            <div id="commentSection"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 NOVEMBER. All rights reserved.</p>
+    </footer>
+    <script src="scripts.js"></script>
+    <script>
+        document.getElementById('photoUploadForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Photo uploaded successfully!');
+        });
+
+        document.getElementById('commentForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const commentText = document.getElementById('commentText').value;
+            if (commentText) {
+                const commentSection = document.getElementById('commentSection');
+                const newComment = document.createElement('p');
+                newComment.textContent = commentText;
+                commentSection.appendChild(newComment);
+                document.getElementById('commentText').value = '';
+            }
+        });
+    </script>
+    <style>
+        body {
+          background-image: url('https://r4.wallpaperflare.com/wallpaper/493/381/162/blue-oneplus-5t-stock-ice-wallpaper-926a7a4df7ced029101bc70ad784ce0a.jpg');
+        }
+        </style>
+</body>
+</html>
